@@ -1,9 +1,9 @@
-name: main
+name: original
 
 on:
   push:
     branches:
-      - main
+      - original
 
 permissions:
   checks: write
