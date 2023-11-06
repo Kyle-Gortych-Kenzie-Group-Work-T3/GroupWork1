@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Run Kenzie Java File Compiler Test",
+      "setup": "",
+      "run": "./gradlew kenzie-javafile-compiler-test --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
