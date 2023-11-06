@@ -1,6 +1,6 @@
 <div align="right">
  
-![week 14](https://img.shields.io/github/actions/workflow/status/Kyle-Gortych-Kenzie-Group-Work-T2/Week14/main.yml?label=main) ![week 14](https://img.shields.io/github/actions/workflow/status/Kyle-Gortych-Kenzie-Group-Work-T2/Week14/original.yml?label=original)
+![week 14](https://img.shields.io/github/actions/workflow/status/Kyle-Gortych-Kenzie-Group-Work-T3/Week14/main.yml?label=main) ![week 14](https://img.shields.io/github/actions/workflow/status/Kyle-Gortych-Kenzie-Group-Work-T3/Week14/original.yml?label=original)
 
 </div>
 
