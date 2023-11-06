@@ -22,7 +22,40 @@ public class BalancedCurlyBraceValidator {
      */
     public boolean check(List<Character> fileCharacters) {
         // TODO: complete this method
-        return false;
+
+        Stack<Character> stack = new Stack<>();
+
+        for (Character character : fileCharacters) {
+
+            if (character == OPEN) {
+
+                stack.push(OPEN); // Push an opening brace onto the stack
+
+            } else if (character == CLOSE) {
+
+                if (stack.isEmpty()) {
+                    // If there is no matching opening brace, return false
+                    if (debug) {
+                        System.out.println("Unmatched closing brace found.");
+                    }
+                    return false;
+                } else {
+                    // Pop the matching opening brace from the stack
+                    stack.pop();
+                }
+            }
+    }
+
+        // If the stack is empty at the end, it means all braces were matched
+        // If the stack is not empty, there were unmatched opening braces
+        if (stack.isEmpty()) {
+            return true;
+        } else {
+            if (debug) {
+                System.out.println("Unmatched opening braces found.");
+            }
+            return false;
+        }
     }
 
     /**
@@ -33,7 +66,47 @@ public class BalancedCurlyBraceValidator {
      */
     public boolean checkExtension(List<Character> fileCharacters) {
         // TODO: complete this method
-        return false;
+
+        Stack<Character> stack = new Stack<>();
+
+        int maxUnbalanced = 0;
+        int currentUnbalanced = 0;
+
+        for (int i = 0; i < fileCharacters.size(); i++) {
+            Character character = fileCharacters.get(i);
+
+            if (character == OPEN) {
+                stack.push(OPEN); // Push an opening brace onto the stack
+                currentUnbalanced++;
+            } else if (character == CLOSE) {
+                if (stack.isEmpty()) {
+                    // If there is no matching opening brace, return false
+                    if (debug) {
+                        System.out.println("Unmatched closing brace found at line " + (i + 1));
+                    }
+                    return false;
+                } else {
+                    // Pop the matching opening brace from the stack
+                    stack.pop();
+                    currentUnbalanced--;
+
+                    if (currentUnbalanced < 0) {
+                        if (debug) {
+                            System.out.println("Unmatched opening brace found at line " + (i + 1));
+                        }
+                        currentUnbalanced = 0;
+                    }
+
+                    maxUnbalanced = Math.max(maxUnbalanced, currentUnbalanced);
+                }
+            }
+        }
+
+        if (debug) {
+            System.out.println("Maximum number of unbalanced braces encountered: " + maxUnbalanced);
+        }
+
+        return stack.isEmpty();
     }
 
     /**
@@ -44,3 +117,4 @@ public class BalancedCurlyBraceValidator {
         this.debug = debug;
     }
 }
+

@@ -1,9 +1,9 @@
-name: main
+name: meazaberhe24
 
 on:
   push:
     branches:
-      - main
+      - meazaberhe24
 
 permissions:
   checks: write
