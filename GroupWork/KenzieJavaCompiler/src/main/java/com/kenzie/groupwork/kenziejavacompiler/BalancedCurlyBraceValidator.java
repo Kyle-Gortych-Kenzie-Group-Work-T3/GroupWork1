@@ -43,6 +43,7 @@ public class BalancedCurlyBraceValidator {
                     // Pop the matching opening brace from the stack
                     stack.pop();
                 }
+                
             }
     }
 
